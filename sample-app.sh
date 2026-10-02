@@ -1,6 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
+# Ruim resten van een vorige build op
+rm -rf tempdir
+docker rm -f samplerunning 2>/dev/null || true
+
 mkdir tempdir
 mkdir tempdir/templates
 mkdir tempdir/static
